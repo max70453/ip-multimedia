@@ -1,0 +1,109 @@
+/* Стили для блока новостей */
+
+/* Стили для карточек новостей */
+#latest-news .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+#latest-news .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#latest-news .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Стили для вкладок категорий */
+#latest-news .nav-pills .nav-link {
+    color: #555;
+    font-weight: 500;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+#latest-news .nav-pills .nav-link.active {
+    background-color: #008b8b;
+    color: #fff;
+}
+
+#latest-news .nav-pills .nav-link:hover:not(.active) {
+    background-color: #f8f9fa;
+}
+
+/* Стили для календаря */
+#latest-news .calendar-container {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#latest-news .calendar-header {
+    padding: 10px 0;
+}
+
+#latest-news .table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+#latest-news .table td {
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#latest-news .table td:hover:not(.bg-primary) {
+    background-color: #f1f1f1;
+}
+
+#latest-news .upcoming-events .list-group-item {
+    transition: background-color 0.2s ease;
+}
+
+#latest-news .upcoming-events .list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Стили для формы подписки */
+#latest-news .form-control {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    height: auto;
+}
+
+#latest-news .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#latest-news .form-check {
+    margin-bottom: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #latest-news .nav-pills .nav-link {
+        padding: 6px 12px;
+        margin: 0 2px;
+        font-size: 14px;
+    }
+    
+    #latest-news .card-img-top {
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    #latest-news .nav-pills {
+        flex-wrap: wrap;
+    }
+    
+    #latest-news .nav-pills .nav-item {
+        margin-bottom: 5px;
+    }
+}

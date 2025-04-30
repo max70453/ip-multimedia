@@ -1,0 +1,150 @@
+.solution-filters {
+    margin-bottom: 30px;
+}
+
+.page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/about-header.png) center center no-repeat;
+    background-size: cover;
+}
+
+.solution-filters .btn {
+    margin: 5px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.solution-filters .btn.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.solution-card {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.solution-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+.solution-card:hover .solution-img img {
+    transform: scale(1.1);
+}
+
+.solution-content {
+    background: #fff;
+}
+
+.solution-features {
+    margin-top: 20px;
+}
+
+.feature-link {
+    display: block;
+    color: var(--dark);
+    padding: 8px 0;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.feature-link:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.feature-link i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+/* Модальное окно для функций */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+}
+
+.modal-header .btn-close {
+    color: #fff;
+    opacity: 1;
+}
+
+/* 3D-модель контейнер */
+.model-container {
+    width: 100%;
+    height: 400px;
+    background: #f8f9fa;
+    position: relative;
+}
+
+/* Калькулятор */
+.calculator-container {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.calculator-result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Анимации для появления элементов */
+.solution-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s;
+}
+
+.solution-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 991px) {
+    .solution-filters .btn {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+
+    .solution-img img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .solution-filters {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .solution-card {
+        margin-bottom: 20px;
+    }
+}
