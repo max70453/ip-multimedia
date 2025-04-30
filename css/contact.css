@@ -73,8 +73,8 @@ textarea.form-control {
 }
 
 .department-filters .btn.active {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #008b8b;
+    color: #fff;
 }
 
 /* Стили карточек отделов */
