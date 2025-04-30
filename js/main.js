@@ -1,8 +1,32 @@
 (function ($) {
     "use strict";
 
-    // Initiate the wowjs
-    new WOW().init();
+    // Анимация при прокрутке с использованием Intersection Observer
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.wow');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate__animated');
+                const animationClass = entry.target.dataset.wowAnimation || 'animate__fadeIn';
+                entry.target.classList.add(animationClass);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach(element => observer.observe(element));
+};
+
+// Анимация для преимуществ и решений
+const initAdvantagesAnimation = () => {
+    const items = document.querySelectorAll('.advantage-item, .solution-item');
+    items.forEach((item, index) => {
+        item.classList.add('wow', 'zoomIn');
+        item.dataset.wowDelay = `${index * 0.3}s`;
+    });
+};
 
     // Sticky Navbar
     $(window).scroll(function () {

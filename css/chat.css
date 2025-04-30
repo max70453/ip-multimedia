@@ -1,0 +1,146 @@
+.chat-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: #06A3DA;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    animation: messageAppear 0.3s ease-out;
+}
+
+.chat-message.user {
+    align-self: flex-end;
+    background-color: #06A3DA;
+    color: white;
+}
+
+.chat-message.bot {
+    align-self: flex-start;
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+}
+
+.message-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.message-content i {
+    font-size: 1.2rem;
+}
+
+.chat-input {
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.chat-input .input-group {
+    background-color: #f0f2f5;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.chat-input input {
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+}
+
+.chat-input input:focus {
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+.chat-input button {
+    border-radius: 0 25px 25px 0;
+    padding: 12px 25px;
+}
+
+.typing-indicator {
+    align-self: flex-start;
+    background-color: #f0f2f5;
+    padding: 10px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background-color: #90949c;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typing 1s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .chat-container {
+        height: 400px;
+    }
+
+    .chat-message {
+        max-width: 90%;
+    }
+}
