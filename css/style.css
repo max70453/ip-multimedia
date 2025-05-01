@@ -295,7 +295,9 @@ h6,
 }
 
 .logo-img{
-    width: 8.5%;
+    width: 5.5%;
+    padding-left: 15px;
+    margin-left: 15px;
 }
 
 .truncate {
