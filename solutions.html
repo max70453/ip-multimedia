@@ -30,10 +30,12 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/cases.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/solutions-styles.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -48,7 +50,6 @@
                 <a href="index.html" class="nav-item nav-link ">Гланая</a>
                 <a href="about.html" class="nav-item nav-link">О нас</a>
                 <a href="solutions.html" class="nav-item nav-link active">Решения</a>
-                <a href="cases.html" class="nav-item nav-link">Примеры решений</a>
                 <a href="traning.html" class="nav-item nav-link">Курсы</a>
                 <a href="support.html" class="nav-item nav-link">Поддержка</a>
                 <a href="contact.html" class="nav-item nav-link">Контакты</a>
@@ -205,6 +206,99 @@
         </div>
     </div>
 
+    <!-- Cases Header Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center mx-auto mb-5" style="max-width: 600px;">
+                <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Наши кейсы</h5>
+                <h1 class="display-5 mb-0">Успешные проекты и решения</h1>
+            </div>
+
+            <!-- Filters Start -->
+            <div class="cases-filters mb-5">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <select class="form-select" id="industryFilter">
+                            <option value="">Все отрасли</option>
+                            <option value="telecom">Телекоммуникации</option>
+                            <option value="finance">Финансы</option>
+                            <option value="retail">Ритейл</option>
+                            <option value="manufacturing">Производство</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-select" id="solutionFilter">
+                            <option value="">Все решения</option>
+                            <option value="uc">Объединенные коммуникации</option>
+                            <option value="cc">Контакт-центры</option>
+                            <option value="video">Видеоконференции</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Filters End -->
+
+            <!-- Cases Grid Start -->
+            <div class="row g-4" id="casesGrid">
+                <!-- Case cards will be dynamically inserted here -->
+            </div>
+            <!-- Cases Grid End -->
+        </div>
+    </div>
+    <!-- Cases Header End -->
+
+    <!-- Statistics Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-check fa-4x text-primary mb-4"></i>
+                        <h5 class="mb-3">Успешных проектов</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">100</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-users fa-4x text-primary mb-4"></i>
+                        <h5 class="mb-3">Довольных клиентов</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">50</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-cogs fa-4x text-primary mb-4"></i>
+                        <h5 class="mb-3">Внедренных решений</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">250</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-award fa-4x text-primary mb-4"></i>
+                        <h5 class="mb-3">Лет опыта</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">15</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Statistics End -->
+
+    <!-- Case Modal -->
+    <div class="modal fade" id="caseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal content will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer Start -->
     <section id="footer">
         <div class="container-fluid bg-dark text-light mt-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -283,10 +377,15 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/solutions.js"></script>
+    <script src="js/cases.js"></script>
 </body>
 
 </html>

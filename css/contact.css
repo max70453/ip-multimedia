@@ -73,7 +73,7 @@ textarea.form-control {
 }
 
 .department-filters .btn.active {
-    background-color: #008b8b;
+    background-color: #50b848;
     color: #fff;
 }
 
@@ -93,7 +93,7 @@ textarea.form-control {
 .department-card .icon {
     width: 60px;
     height: 60px;
-    background: #007bff;
+    background: #50b848;
     border-radius: 50%;
     display: flex;
     align-items: center;
